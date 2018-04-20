@@ -37,7 +37,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        registrar = findViewById(R.id.register);
+        registrar = findViewById(R.id.registrar);
         run = findViewById(R.id.run);
         nombres=findViewById(R.id.nombres);
         apellidos=findViewById(R.id.apellidos);
@@ -98,24 +98,21 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         requestQueue.add(request);
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.registrar:
-                final String runtext = run.getText().toString();
-                final String nombrestext = nombres.getText().toString();
-                final String apellidostext = apellidos.getText().toString();
-                final String emailtext = email.getText().toString();
-                final String passtext = pass.getText().toString();
-                final String nicktext = nickname.getText().toString();
-                serviceWebRegister(runtext,nombrestext,apellidostext,emailtext,passtext,nicktext);
-                Intent registrar = new Intent(RegisterActivity.this, LoginActivity.class);
-                startActivity(registrar);
-                break;
-        }
-    }
 
     private void generateToast(String msg){
         Toast.makeText(getApplicationContext(),msg, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onClick(View v) {
+        final String runtext = run.getText().toString();
+        final String nombrestext = nombres.getText().toString();
+        final String apellidostext = apellidos.getText().toString();
+        final String emailtext = email.getText().toString();
+        final String passtext = pass.getText().toString();
+        final String nicktext = nickname.getText().toString();
+        serviceWebRegister(runtext,nombrestext,apellidostext,emailtext,passtext,nicktext);
+        Intent registrar = new Intent(RegisterActivity.this, LoginActivity.class);
+        startActivity(registrar);
     }
 }
