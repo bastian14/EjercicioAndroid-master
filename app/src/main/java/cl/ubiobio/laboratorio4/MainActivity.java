@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -56,9 +57,21 @@ public class MainActivity extends AppCompatActivity
         name_user = header.findViewById(R.id.name_user);
         email_user = header.findViewById(R.id.email_user);
 
+
+       // String name = responseJson.getJSONObject("data").getString("nombres");
+        String name = sp.getString("nombre","");
+        String correo = sp.getString("email","");
         //Si hay datos de usuario, cambiarlos
-        name_user.setText("Pepe");
-        email_user.setText("pepe@email.com");
+        if(name.length()>0 || correo.length()>0){
+            name_user.setText(name);
+            email_user.setText(correo);
+        }else{
+            name_user.setText(name);
+            email_user.setText(correo);
+            /*name_user.setText("Pepe");
+            email_user.setText("pepe@email.com");*/
+        }
+
     }
 
     @Override

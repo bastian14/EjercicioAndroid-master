@@ -109,7 +109,7 @@
             android:id="@+id/pas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
+            android:inputType="textPassword"
             android:hint="Contraseña" />
     </android.support.design.widget.TextInputLayout>
 
@@ -128,7 +128,7 @@
             android:id="@+id/nick"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
+            android:inputType="text"
             android:hint="Nickname" />
     </android.support.design.widget.TextInputLayout>
 

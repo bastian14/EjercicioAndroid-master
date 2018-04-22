@@ -66,6 +66,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                             Log.d("LOG WS", "apellidos: " + responseJson.getJSONObject("data").getString("apellidos"));
                             Log.d("LOG WS", "nickname: " + responseJson.getJSONObject("data").getString("nickname"));
                             Log.d("LOG WS", "pass: " + responseJson.getJSONObject("data").getString("pass"));
+
                             generateToast(responseJson.getString("info"));
                             if(responseJson.getBoolean("resp")){
                                 //iniciar otra actividad.....

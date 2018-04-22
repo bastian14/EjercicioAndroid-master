@@ -105,10 +105,20 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             JSONObject responseJson = new JSONObject(response);
                             Log.d("LOG WS", "nombre: " + responseJson.getJSONObject("data").getString("nombres"));
                             Log.d("LOG WS", "email: " + responseJson.getJSONObject("data").getString("email"));
+                            edit.putString("nombre",responseJson.getJSONObject("data").getString("nombres"));
+                            edit.putString("email",responseJson.getJSONObject("data").getString("email"));
+                            edit.commit();
                             generateToast(responseJson.getString("info"));
                             if(responseJson.getBoolean("resp")){
                                 //iniciar otra actividad.....
+                                edit.putString("nombre",responseJson.getJSONObject("data").getString("nombres"));
+                                edit.putString("email",responseJson.getJSONObject("data").getString("email"));
+                                edit.commit();
+
                             }else{
+                                edit.putString("nombre",responseJson.getJSONObject("data").getString("nombres"));
+                                edit.putString("email",responseJson.getJSONObject("data").getString("email"));
+                                edit.commit();
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
